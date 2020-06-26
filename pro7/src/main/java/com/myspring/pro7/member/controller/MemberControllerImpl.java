@@ -67,7 +67,7 @@ public class MemberControllerImpl   implements MemberController {
 	}
 	
 	@Override
-	@RequestMapping(value="/member/loout.do", method=RequestMethod.GET)
+	@RequestMapping(value="/member/logout.do", method=RequestMethod.GET)
 	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		HttpSession session = request.getSession();
 		session.removeAttribute("member");	//로그아웃 요청 시 세션세 저장된 로그인 정보와 회원정보 삭제
@@ -112,13 +112,6 @@ public class MemberControllerImpl   implements MemberController {
 		return mav;
 	}
 
-
-	
-	
-
-	
-
-	
 
 	private String getViewName(HttpServletRequest request) throws Exception {
 		String contextPath = request.getContextPath();
